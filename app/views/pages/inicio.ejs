@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../Partials/head'); %>
+</head>
+<body class="container">
+
+<header>
+    <%- include('../partials/header'); %>
+</header>
+
+<main>
+    <div class="jumbotron">
+		<div class="row justify-content-md-center">
+		<p><%= retorno %></p>
+		</div>
+        <div class="row justify-content-md-center">
+			<form  method="post" class="x-form-signin">
+				<div class="form-group">
+					<label for="nome">Nome</label>
+					<input type="text" class="form-control" name="nome" placeholder="Enter Nome">
+				  </div>
+				<div class="form-group">
+				  <label for="sobrenome">Sobrenome</label>
+				  <input type="text" class="form-control" name="sobrenome" placeholder="Enter Sobrenome">
+				</div>
+				<div class="form-group">
+					<label for="email">E-mail</label>
+					<input type="text" class="form-control" name="email" placeholder="Enter email">
+				  </div>
+				<button type="submit" class="btn btn-primary" formaction="/">Enviar Dados</button>
+			  </form>
+		</div>
+    </div>
+</main>
+
+<footer>
+    <%- include('../partials/footer'); %>
+</footer>
+
+</body>
+
+
+</html>
