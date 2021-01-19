@@ -1,8 +1,9 @@
 const http = require("http");
+const querystring = require('querystring');
 
 var postAPI = function(nome,sobrenome,email,retorno){
 
-    var body = JSON.stringify({
+    var data = querystring.stringify({
         'nome' : nome,
         'sobrenome':sobrenome,
         'email': email
@@ -14,15 +15,15 @@ var postAPI = function(nome,sobrenome,email,retorno){
         path: '/',
         method: 'POST', 
         headers: {
-          'Content-Type': 'application/json',
-          'Content-Length': body.length
+          'Content-Type': 'application/x-www-form-urlencoded',
+          'Content-Length': Buffer.byteLength(data)
         }
     };
 
     var request = http.request(options,retorno);
-    request.on('error', (e) => {console.log(error);});   
+    request.on('error', (error) => {console.log(error);});   
     // aqui podes enviar data no POST
-    request.write(body);
+    request.write(data);
     request.end();
 };
 

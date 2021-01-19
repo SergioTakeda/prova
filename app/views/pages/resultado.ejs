@@ -38,23 +38,42 @@
                         <div class="card-header">
                             <div class="justify-content-md-start">
                                 <div class="text">
+                                    <h3>Codigos da API</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body" style="height: 200px;">
+                            <div class="row justify-content-md-center">
+                                <div class="col"><p>cod do nome= <%= num_codnome %></p></div>
+                            </div>
+                            <div class="row justify-content-md-center">
+                                <div class="col"><p> cod sobrenome = <%= num_codsobrenome %></p></div>
+                            </div>
+                            <div class="row justify-content-md-center">
+                                <div class="col"><p>cod e-mail = <%= num_codemail %></p></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class = "col-md-6">     
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="justify-content-md-start">
+                                <div class="text">
                                     <h3>Calculo do Total</h3>
                                 </div>
                             </div>
                         </div>
-                        <div class="card-body" style="height: 305px;">
+                        <div class="card-body" style="height: 200px;">
                            
                             <div class="row justify-content-md-center">
-                                <div class="col"><p>Resposta api =<%= APIresp %></p></div>
-                            </div>  
-                            <div class="row justify-content-md-center">
-                                <div class="col"><p>soma do nome =<%= nsoma %></p></div>
+                                <div class="col"><p>soma do nome =<%= nsoma[0].soma %></p></div>
                             </div> 
                             <div class="row justify-content-md-center">
-                                <div class="col"><p>soma do sobrenome =<%= sobresoma %></p></div>
+                                <div class="col"><p>soma do sobrenome =<%= sobresoma[0].soma %></p></div>
                             </div> 
                             <div class="row justify-content-md-center">
-                                <div class="col"><p>soma do e-mail =<%= emasoma %></p></div>
+                                <div class="col"><p>soma do e-mail =<%= emasoma[0].soma %></p></div>
                             </div> 
                             <div class="row justify-content-md-center">
                                 <div class="col"><p>total =<%= total %></p></div>
@@ -62,8 +81,6 @@
                             
                         </div>
                     </div>
-                </div>
-                <div class = "col-md-6">
                     <div class="card">
                         <div class="card-header">
                             <div class="justify-content-md-start">
@@ -72,30 +89,30 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="card-body" style="height: 400px;">
+                        <div class="card-body" style="height: 500px;">
                             <div class="row justify-content-md">
                                 <ul>
                                     <p>Retorno animal</p>
                                     <%for(var chave in animalret){ %>
-                                        <li>id = <%= animalret[chave].id %> - <%= animalret[chave].animal %> - total = <%= animalret[chave].total %> </li>
+                                        <li>id = <%= animalret[chave].id %> | Animal = <%= animalret[chave].animal %> | total = <%= animalret[chave].total %> </li>
                                     <% } %>    
                                 </ul>
                                 <ul>
                                     <p>Retorno Cor</p>
                                     <%for(var chave in corret){ %>
-                                        <li>id = <%= corret[chave].id %> - <%= corret[chave].cor %> - total = <%= corret[chave].total %> </li>
+                                        <li>id = <%= corret[chave].id %> | Cor = <%= corret[chave].cor %> | total = <%= corret[chave].total %> </li>
                                     <% } %>    
                                 </ul>
                                 <ul>
                                     <p>Retorno Cor excluida</p>
                                     <%for(var chave in corexcluidaret){ %>
-                                        <li>id = <%= corexcluidaret[chave].id %> - <%= corexcluidaret[chave].cor %> - total = <%= corexcluidaret[chave].total %> </li>
+                                        <li>id = <%= corexcluidaret[chave].id %> | Cor = <%= corexcluidaret[chave].cor %> | total = <%= corexcluidaret[chave].total %> </li>
                                     <% } %>    
                                 </ul>
                                 <ul>
                                     <p>Retorno pais</p>
                                     <%for(var chave in paisret){ %>
-                                        <li>id = <%= paisret[chave].id %> - <%= paisret[chave].pais %> - total = <%= paisret[chave].total %> </li>
+                                        <li>id = <%= paisret[chave].id %> | pais = <%= paisret[chave].pais %> | total = <%= paisret[chave].total %> </li>
                                     <% } %>    
                                 </ul>
                         </div>
