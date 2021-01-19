@@ -46,7 +46,7 @@ module.exports = function(){
       
         tp.sql(operabd.update("tbs_cores_excluidas","cor"," ","total",total))
         .execute()
-        .then(function(res){console.log(res)})
+        .then(function(res){console.log("cor apagada")})
         .fail(function(err) {
             console.log(err);    
         });
@@ -68,7 +68,7 @@ module.exports = function(){
       
         tp.sql(operabd.update("tbs_nome","nome",valor,"cod",codigo))
         .execute()
-        .then(function(res){console.log(res)})
+        .then(function(res){console.log("nome atualizado")})
         .fail(function(err) {
             console.log(err);    
         });
@@ -79,7 +79,7 @@ module.exports = function(){
       
         tp.sql(operabd.update("tbs_sobrenome","sobrenome",valor,"cod",codigo))
         .execute()
-        .then(function(res){console.log(res)})
+        .then(function(res){console.log("sobrenome atualizado")})
         .fail(function(err) {
             console.log(err);    
         });
@@ -90,7 +90,7 @@ module.exports = function(){
       
         tp.sql(operabd.update("tbs_email","email",valor,"cod",codigo))
         .execute()
-        .then(function(res){console.log(res)})
+        .then(function(res){console.log("email atualizado")})
         .fail(function(err) {
             console.log(err);    
         });
