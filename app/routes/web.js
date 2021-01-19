@@ -30,6 +30,7 @@ module.exports = function(app){
     res.render('pages/resultado',{nome:nome,sobrenome:sobrenome,email:email,num_codnome:num_codnome,num_codsobrenome:num_codsobrenome,num_codemail:num_codemail,nsoma:nsoma,sobresoma:sobresoma,emasoma:emasoma,total:total,animalret:animalret,corret:corret,corexcluidaret:corexcluidaret,paisret:paisret});
 });
 
+
 app.get("/testpost",function(req,res){ 
   var nome = "sergio";
   var sobrenome = "takeda";
@@ -88,9 +89,9 @@ app.get("/testpost",function(req,res){
           var num_codsobrenome = Number(splitcode[3]);
           var num_codemail = Number(splitcode[5]);
 //////////// incere nome sobrenome email //////////////////////////////////////////         
-         // regModel.incereNome(nome,splitcode[1]);
-        //  regModel.incereSobrenome(sobrenome,splitcode[3]);
-        //  regModel.incereemail(email,splitcode[5]);
+          regModel.incereNome(nome,splitcode[1]);
+          regModel.incereSobrenome(sobrenome,splitcode[3]);
+          regModel.incereemail(email,splitcode[5]);
 ////////////////// calcula valor total //////////////////////////////////////////////       
           regModel.nomesoma(num_codnome,function(nsoma){
             console.log("soma nome ="+nsoma[0].soma)
@@ -104,10 +105,7 @@ app.get("/testpost",function(req,res){
                 var parcialemail = num_codemail + Number(emasoma[0].soma);
                 var total = parcialemail+ parcialsobrenome + parcialnome;
                
-                console.log(parcialnome);
-                console.log(parcialsobrenome);
-                console.log(parcialemail);
-                console.log(total);
+                console.log("Total = "+total);
  /////////////////////select animal,cor,cor excluida e pais ///////////////////////////                  
                 regModel.animal(total,function(animalret){
                   console.log("animal = "+animalret[0].animal);
@@ -123,7 +121,7 @@ app.get("/testpost",function(req,res){
                     });
                   });
                 });
-               // regModel.limpacores(total);
+                regModel.limpacores(total);
               });
             });
           });
