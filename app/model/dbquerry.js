@@ -9,7 +9,7 @@ this.query = function(campo1,campo2,campo3,tabela,chave,indice){
 
 this.update = function(Tabela,campo,valor,chave,indice){
 
-    var update = " UPDATE "+ Tabela + " SET " + campo +" = "+ valor + " where "+ chave +" = " + indice;
+    var update = " UPDATE "+ Tabela + " SET " + campo +" = '"+ valor + "' where "+ chave +" = " + indice;
     return update;  
 }
 
